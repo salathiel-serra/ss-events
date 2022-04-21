@@ -1,0 +1,41 @@
+version: "3.3"
+
+networks:
+  ss_events_network:
+    driver: bridge
+
+services: 
+  db-mysql:
+    image: mysql:latest
+    container_name: "ss_events_db1"
+    restart: always
+    environment:
+      MYSQL_DATABASE: ss-events-db1
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - "./setup/mysql/:/var/lib/mysql"
+    ports:
+      - "3310:3306"
+    networks:
+      - ss_events_network
+
+  app:
+    build: .
+    tty: true
+    container_name: "ss_events_app"
+    entrypoint: sh /docker-entrypoint.sh 
+    restart: "always"
+    volumes:
+      - "./:/var/www/html"
+      - "./setup/php/php.ini:/etc/php.ini"
+      - "./setup/apache/httpd.conf:/etc/httpd/conf/httpd.conf"
+      - "./setup/apache/xdebug.ini:/etc/php.d/xdebug.ini"
+    ports:
+      - "9090:80"
+    networks:
+      - ss_events_network
+
+
+
+    
