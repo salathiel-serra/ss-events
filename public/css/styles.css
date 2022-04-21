@@ -1,3 +1,11 @@
 * {
     font-family: "Roboto";
 }
+
+header {
+    background-color: #e3f2fd;
+}
+
+#navbar img {
+    width: 300px !important;
+}
