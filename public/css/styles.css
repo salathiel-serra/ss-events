@@ -30,7 +30,21 @@ header {
 
 .btn-primary:hover {
     background-color: #C28008;
-    border-color: #C28008
+    border-color: #C28008;
+}
+
+.input-required {
+    color: #FF0000;
+}
+
+.msg {
+    background-color: #D4EDDA;
+    color: #155724;
+    border: 1px solid #C3E6CB;
+    width: 100%;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 10px;
 }
 
 /* navbar */
@@ -91,11 +105,11 @@ header {
 }
 
 #events-container .card {
-    flex: 1 1 0;
+    flex: 1 1 24%;
     max-width: 25%;
     border-radius: 10px;
     padding: 0;
-    margin: 5px;
+    margin: .5%;
 }
 
 #events-container img {
@@ -119,6 +133,29 @@ header {
 .card-participants {
     font-size: 14px;
     color: #757575;
+}
+
+/* Event create page */
+#event-create-container {
+    padding: 30px;
+}
+
+#event-create-container h1 {
+    margin-bottom: 20px;
+}
+
+#event-create-container label {
+    font-weight: 500;
+}
+
+#event-create-container input,
+#event-create-container select,
+#event-create-container textarea {
+    font-size: 12px;
+}
+
+.form-group {
+    margin-bottom: 15px;
 }
 
 /* Footer */
