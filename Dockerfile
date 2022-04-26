@@ -44,6 +44,10 @@ RUN yum install -y epel-release yum-utils && \
     php-gd \
     php-xdebug
 
+# INSTALANDO NODEJS
+RUN curl -sL https://rpm.nodesource.com/setup_16.x | bash - && \
+    yum install nodejs -y
+
 # LIMPEZA DE PACOTES
 RUN yum clean headers && yum clean packages
 
