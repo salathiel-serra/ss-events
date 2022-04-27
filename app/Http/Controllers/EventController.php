@@ -50,6 +50,8 @@ class EventController extends Controller
             $event->image = $imageName;
         }
 
+        $event->user_id = auth()->user()->id;
+
         $event->save();
 
         return redirect("/")
